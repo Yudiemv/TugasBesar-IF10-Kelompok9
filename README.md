@@ -1,4 +1,11 @@
-TugasBesar-Kelompok9
-====================
+TUGAS BESAR KOMPUTER GRAFIKA
 
-Tugas Besar Balon Udara
+OBJEK 3D BALON UDARA
+
+
+
+                           KELOMPOK 9
+M LUTFI AZHAR  	10108497 (lutfi99)
+YUDIE RUSMAYUDI                  10108486 (Yudiemv)
+YUNI SOPIAWATI		10108491 (brounnies)
+AHMAD MUGENI		10108493 (muggii)
