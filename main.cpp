@@ -606,7 +606,7 @@ unsigned int LoadTextureFromBmpFile(char *filename);
 void balonatas(void){
 glPushMatrix();
 glBindTexture(GL_TEXTURE_2D, texture[1]);
-glTranslatef(0,100,0);
+glTranslatef(0,102,0);
 glutSolidSphere(20,20,50);
 glPopMatrix();
 }
@@ -620,9 +620,9 @@ gluQuadricNormals(pObj, GLU_SMOOTH);
 
 glPushMatrix();
 glBindTexture(GL_TEXTURE_2D, texture[1]);
-glTranslatef(0,90,0);  
+glTranslatef(0,92,0);  
 glRotatef(90,1,0,0);
-gluCylinder(pObj, 17, 5, 20, 25, 25);
+gluCylinder(pObj, 17, 6, 22, 25, 25);
 glPopMatrix();
 }
 
@@ -648,9 +648,204 @@ glPopMatrix();
 
 
 
+void tiang1(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(3.5,65,3.5);
+glRotatef(90,1,0,0);
+gluCylinder(pObj, 0.3, 0.3, 3, 25, 25);
+glPopMatrix();
+}
+
+
+void tiang2(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(3.5,65,-3.5);
+glRotatef(90,1,0,0);
+gluCylinder(pObj, 0.3, 0.3, 3, 25, 25);
+glPopMatrix();
+}
+
+void tiang3(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(-3.5,65,3.5);
+glRotatef(90,1,0,0);
+gluCylinder(pObj, 0.3, 0.3, 3, 25, 25);
+glPopMatrix();
+}
+
+
+void tiang4(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(-3.5,65,-3.5);
+glRotatef(90,1,0,0);
+gluCylinder(pObj, 0.3, 0.3, 3, 25, 25);
+glPopMatrix();
+}
+
+
+void tiang5(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(3.5,64.8,-3.5);
+glRotatef(-90,0,1,0);
+gluCylinder(pObj, 0.3, 0.3, 7.2, 25, 25);
+glPopMatrix();
+}
+
+
+void tiang6(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(3.5,64.8,-3.5);
+glRotatef(0,1,0,0);
+gluCylinder(pObj, 0.3, 0.3, 7.2, 25, 25);
+glPopMatrix();
+}
+
+
+void tiang7(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(-3.5,64.8,3.5);
+glRotatef(90,0,1,0);
+gluCylinder(pObj, 0.3, 0.3, 7.2, 25, 25);
+glPopMatrix();
+}
+
+void tiang8(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(-3.5,64.8,-3.5);
+glRotatef(0,1,0,0);
+gluCylinder(pObj, 0.3, 0.3, 7.2, 25, 25);
+glPopMatrix();
+}
 
 
 
+
+
+void tali1(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(4.7,70.1,3.8);
+glRotatef(93,1,0,0);
+glRotatef(-15,0,1,0);
+gluCylinder(pObj, 0.05, 0.05, 6, 25, 25);
+glPopMatrix();
+}
+
+void tali2(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(2,70.1,5.5);
+glRotatef(93,1,0,0);
+glRotatef(15,0,1,0);
+glRotatef(15,1,0,0);
+gluCylinder(pObj, 0.05, 0.05, 6, 25, 25);
+glPopMatrix();
+}
+
+void tali3(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(5,70.1,5.3);
+glRotatef(93,1,0,0);
+glRotatef(-15,0,1,0);
+glRotatef(15,1,0,0);
+gluCylinder(pObj, 0.05, 0.05, 6, 25, 25);
+glPopMatrix();
+}
+
+void tali4(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(2,70.1,3.3);
+glRotatef(70,1,0,0);
+glRotatef(15,0,1,0);
+glRotatef(15,1,0,0);
+gluCylinder(pObj, 0.05, 0.05, 6, 25, 25);
+glPopMatrix();
+}
+
+void tali5(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(5,70.1,5.3);
+glRotatef(93,1,0,0);
+glRotatef(-15,0,1,0);
+glRotatef(15,1,0,0);
+gluCylinder(pObj, 0.05, 0.05, 6, 25, 25);
+glPopMatrix();
+}
+
+void tali6(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(2,70.1,1.3);
+glRotatef(83,1,0,0);
+glRotatef(15,0,1,0);
+glRotatef(-15,1,0,0);
+gluCylinder(pObj, 0.05, 0.05, 6, 25, 25);
+glPopMatrix();
+}
+
+void tali7(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(5,70.1,1.7);
+glRotatef(70,1,0,0);
+glRotatef(-15,0,1,0);
+gluCylinder(pObj, 0.05, 0.05, 6, 25, 25);
+glPopMatrix();
+}
+
+void tali8(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glTranslatef(2.2,70.1,3.4);
+glRotatef(75,1,0,0);
+glRotatef(15,0,1,0);
+glRotatef(15,1,0,0);
+gluCylinder(pObj, 0.05, 0.05, 6, 25, 25);
+glPopMatrix();
+}
 
 
 
@@ -666,6 +861,21 @@ gluSphere(pObj, 2, 25, 25);
 gluCylinder(pObj, 2, 2, 30, 25, 25);
 glPopMatrix();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -928,13 +1138,13 @@ void display(void){
 //glColorMaterial(GL_FRONT,GL_SPECULAR);
 
 
-
+/*
 //pohon
 glPushMatrix();
 glTranslatef(0,28,0);    
 batangpohon();
 glPopMatrix();
-
+*/
 /*
 glPushMatrix();
 glScaled(5, 5, 5);
@@ -958,17 +1168,43 @@ glPopMatrix();
 //Balon
 
 balonatas();
-
 balonbawah();
-
 
 
 
 //Kotak dibawah balon
 kotak();
 
+//tiang
+tiang1();
+tiang2();
+tiang3();
+tiang4();
+tiang5();
+tiang6();
+tiang7();
+tiang8();
 
+tali1();
+tali2();
 
+glPushMatrix();
+glTranslatef(-7,0,0);
+tali3();
+tali4();
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(0,0,-7);
+tali5();
+tali6();
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(-7,0,-7);
+tali7();
+tali8();
+glPopMatrix();
 
 
 
