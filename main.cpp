@@ -841,19 +841,39 @@ glPopMatrix();
 
 
 
-void batangpohon(void){
+void pohon(void){
+//batang
 GLUquadricObj *pObj;
 pObj =gluNewQuadric();
 gluQuadricNormals(pObj, GLU_SMOOTH);    
 
 glPushMatrix();
-
-glRotatef(90,1,0,0);
-gluSphere(pObj, 2, 25, 25);
-gluCylinder(pObj, 2, 2, 30, 25, 25);
+glColor3ub(104,70,14);
+glRotatef(270,1,0,0);
+gluCylinder(pObj, 4, 0.7, 30, 25, 25);
 glPopMatrix();
 }
 
+//ranting  
+void ranting(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH); 
+glPushMatrix();
+glColor3ub(104,70,14);
+glTranslatef(0,27,0);
+glRotatef(330,1,0,0);
+gluCylinder(pObj, 0.6, 0.1, 15, 25, 25);
+glPopMatrix();
+
+//daun
+glPushMatrix();
+glColor3ub(18,118,13);
+glScaled(5, 5, 5);
+glTranslatef(0,7,3);
+glutSolidDodecahedron();
+glPopMatrix();
+}
 
 
 
@@ -1172,20 +1192,66 @@ void display(void){
 //glColorMaterial(GL_FRONT,GL_SPECULAR);
 
 
-/*
-//pohon
+
+//pohon1
 glPushMatrix();
-glTranslatef(0,28,0);    
-batangpohon();
-glPopMatrix();
-*/
-/*
+glTranslatef(30,-2,50);    
+
+pohon();
+
+//ranting1
+ranting();
+
+//ranting2
 glPushMatrix();
-glScaled(5, 5, 5);
-glTranslatef(0,5,0);
-glutSolidDodecahedron();
+glScalef(1.5, 1.5, 1.5);
+glTranslatef(0,25,25);   
+glRotatef(250,1,0,0);
+ranting();
 glPopMatrix();
-*/
+
+//ranting3
+glPushMatrix();
+glScalef(1.8, 1.8, 1.8);
+glTranslatef(0,-6,21.5);   
+glRotatef(-55,1,0,0);
+ranting();
+glPopMatrix();
+
+glPopMatrix();
+
+
+
+//pohon2
+glPushMatrix();
+glTranslatef(-50,-2,30);    
+glScalef(0.8, 0.8, 0.8);
+glRotatef(90,0,1,0);
+pohon();
+
+//ranting1
+ranting();
+
+//ranting2
+glPushMatrix();
+glScalef(1.5, 1.5, 1.5);
+glTranslatef(0,25,25);   
+glRotatef(250,1,0,0);
+ranting();
+glPopMatrix();
+
+//ranting3
+glPushMatrix();
+glScalef(1.8, 1.8, 1.8);
+glTranslatef(0,-6,21.5);   
+glRotatef(-55,1,0,0);
+ranting();
+glPopMatrix();
+
+glPopMatrix();
+
+
+
 
 
 
@@ -1196,9 +1262,15 @@ glScalef(0.3, 0.3, 0.3);
 burung();
 glPopMatrix();
 
+
+
+
+glPushMatrix();
+glScalef(2, 2, 2);
+glTranslatef(0,-30,0); 
+
 //manusia
 manusia();
-
 
 //Balon
 
@@ -1244,7 +1316,7 @@ tali7();
 tali8();
 glPopMatrix();
 
-
+glPopMatrix();
 
 
 
