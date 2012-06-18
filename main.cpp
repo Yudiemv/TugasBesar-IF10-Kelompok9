@@ -566,7 +566,36 @@ unsigned int LoadTextureFromBmpFile(char *filename);
 */
 
 
+void matahari(void){
+glPushMatrix();
+glTranslatef(150,150,-150);  
+glColor3ub(255, 253, 116);
+glutSolidSphere(10, 50, 50);
+glPopMatrix();
+}
 
+void awan(void){
+glPushMatrix(); 
+glColor3ub(153, 223, 255);
+glutSolidSphere(10, 50, 50);
+glPopMatrix();
+glPushMatrix();
+glTranslatef(10,0,1);
+glutSolidSphere(5, 50, 50);
+glPopMatrix();   
+glPushMatrix();
+glTranslatef(-2,6,-2);
+glutSolidSphere(7, 50, 50);
+glPopMatrix();   
+glPushMatrix();
+glTranslatef(-10,-3,0);
+glutSolidSphere(7, 50, 50);
+glPopMatrix();  
+glPushMatrix();
+glTranslatef(6,-2,2);
+glutSolidSphere(7, 50, 50);
+glPopMatrix();      
+}
 
 
 void balonatas(void){
@@ -917,6 +946,8 @@ glPopMatrix();
 
 }
 
+
+//manusia
 void manusia(void){
 glPushMatrix();
 glTranslatef(0,62.8,2);  
@@ -1224,6 +1255,48 @@ void display(void){
 
 //glEnable(GL_COLOR_MATERIAL);
 //glColorMaterial(GL_FRONT,GL_SPECULAR);
+
+//matahari
+matahari();
+
+//awan
+glPushMatrix();
+glTranslatef(100,100,-100);  
+glScalef(1.8, 1.0, 1.0);
+awan();
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(90,90,-95);  
+glScalef(1.8, 1.0, 1.0);
+awan();
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(120,95,-95);  
+glScalef(1.8, 1.0, 1.0);
+awan();
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(-100,120,-100);  
+glScalef(1.8, 1.0, 1.0);
+awan();
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(-90,110,-95);  
+glScalef(1.8, 1.0, 1.0);
+awan();
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(-120,115,-95);  
+glScalef(1.8, 1.0, 1.0);
+awan();
+glPopMatrix();
+
+
 
 //pohon1
 glPushMatrix();
