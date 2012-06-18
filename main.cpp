@@ -21,9 +21,9 @@ using namespace std;
 
 float lastx, lasty;
 GLint stencilBits;
-static int viewx = 50;
-static int viewy = 24;
-static int viewz = 80;
+static int viewx = 0;
+static int viewy = 100;
+static int viewz = 150;
 
 float rot = 0;
 
@@ -513,11 +513,11 @@ void update(int value) {
 	glutTimerFunc(25, update, 0);
 }
 
-/*
+
 void freetexture(GLuint texture) {
 	glDeleteTextures(2, &texture);
 }
-*/
+
 
 
 
@@ -571,7 +571,6 @@ unsigned int LoadTextureFromBmpFile(char *filename);
 
 void balonatas(void){
 glPushMatrix();
-glBindTexture(GL_TEXTURE_2D, texture[1]);
 glTranslatef(0,102,0);
 glutSolidSphere(20,20,50);
 glPopMatrix();
@@ -593,10 +592,16 @@ glPopMatrix();
 
 
 
+void kotakatas(void){
+glPushMatrix();
+glTranslatef(0,65.2,0);
+glScalef(1, 0.1, 1);
+glutSolidCube(8);
+glPopMatrix();
+}
 
 void kotak1(void){
 glPushMatrix();
-glBindTexture(GL_TEXTURE_2D, texture[2]);
 glTranslatef(0,58,0);
 glScalef(1, 0.05, 1);
 glutSolidCube(8);
@@ -605,7 +610,6 @@ glPopMatrix();
 
 void kotak2(void){
 glPushMatrix();
-glBindTexture(GL_TEXTURE_2D, texture[2]);
 glTranslatef(3.7,60,0);
 glScalef(0.05, 0.5, 1);
 glutSolidCube(8);
@@ -614,7 +618,6 @@ glPopMatrix();
 
 void kotak3(void){
 glPushMatrix();
-glBindTexture(GL_TEXTURE_2D, texture[2]);
 glTranslatef(-3.7,60,0);
 glScalef(0.05, 0.5, 1);
 glutSolidCube(8);
@@ -623,7 +626,6 @@ glPopMatrix();
 
 void kotak4(void){
 glPushMatrix();
-glBindTexture(GL_TEXTURE_2D, texture[2]);
 glTranslatef(0,60,3.7);
 glScalef(1, 0.5, 0.05);
 glutSolidCube(8);
@@ -632,7 +634,6 @@ glPopMatrix();
 
 void kotak5(void){
 glPushMatrix();
-glBindTexture(GL_TEXTURE_2D, texture[2]);
 glTranslatef(0,60,-3.7);
 glScalef(1, 0.5, 0.05);
 glutSolidCube(8);
@@ -876,12 +877,49 @@ glPopMatrix();
 }
 
 
+//api
+void tempatapi(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH);
 
+glPushMatrix();
+glTranslatef(0,66.5,0);
+glutSolidCube(2);
+glPopMatrix();
 
+glPushMatrix();
+glTranslatef(0,68,0);
+glutSolidCube(1);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(0,69.5,0);
+glRotatef(90,1,0,0);
+gluCylinder(pObj, 0.3, 0.3, 1, 25, 25);
+glPopMatrix();
+}
+
+void api(void){
+
+glPushMatrix();
+glColor3ub(241,114,11);
+glTranslatef(0,69.5,0);
+glutSolidSphere(0.4, 20, 20);
+glPopMatrix();
+
+glPushMatrix();
+glColor3ub(241,170,11);
+glTranslatef(0,69.5,0);
+glRotatef(-90,1,0,0);
+glutSolidCone(0.4, 1, 20, 20);
+glPopMatrix();
+
+}
 
 void manusia(void){
 glPushMatrix();
-glTranslatef(0,63.8,2);  
+glTranslatef(0,62.8,2);  
 glScalef(0.4, 0.4, 0.4);
 
     GLUquadricObj *pObj; 
@@ -926,14 +964,14 @@ glScalef(0.4, 0.4, 0.4);
 	glPushMatrix();
 		glTranslatef(0.0, -3.6, 0.0);
 		glRotatef(160.0, 1.0, 0, 1.0);
-		gluCylinder(pObj, 0.7, 0.3, 10.0, 26, 13);
+		gluCylinder(pObj, 0.7, 0.3, 9.0, 26, 13);
 	glPopMatrix();
 	//tangan kanan
 	glColor3ub(205,133,63);
 	glPushMatrix();
 		glTranslatef(0.0, -3.6, 0.0);
 		glRotatef(160.0, 1.0, 0.0, -1.0);
-		gluCylinder(pObj, 0.7, 0.3, 10.0, 26, 13);
+		gluCylinder(pObj, 0.7, 0.3, 9.0, 26, 13);
 	glPopMatrix();
 	
 	
@@ -1040,16 +1078,14 @@ void burung(void) {
 
 	glPopMatrix();
 
-	glColor3f(0.88, 0.88, 0.3);
 
 	//mulut
 
-
+    
+    
 	glPushMatrix();
-
 	glTranslatef(xS + 5, yS -7 + 2, zS -1);
 	glRotatef(90, -0.5, 1, 0);
-	//glScalef(4 * 3, 0.6 * 3, 2.5 * 3);
 	glutSolidCone(1.5, 3, 20, 30);
 	glPopMatrix();
 	
@@ -1058,12 +1094,12 @@ void burung(void) {
 
 	glTranslatef(xS + 5, yS -7 + 2, zS -1);
 	glRotatef(90, 0.5, 1, 0);
-	//glScalef(4 * 3, 0.6 * 3, 2.5 * 3);
 	glutSolidCone(1.5, 3, 20, 30);
 	glPopMatrix();
 	
 	//badan utama
 	glPushMatrix();
+	
 	glColor3f(0.88, 0.88, 0.1);
 	glTranslatef(xS - 7, yS - 10, zS - 0.3);
 	glScalef(5 * 4, 4 * 3, 4 * 4);
@@ -1158,7 +1194,7 @@ void display(void){
 	glClearColor(0.0, 0.6, 0.8, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
     glLoadIdentity();
-	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
+	gluLookAt(viewx, viewy, viewz, 0.0, 50.0, 0.0, 0.0, 1.0, 0.0);
 //gluLookAt(0.0,10.0,3.0,0.0,0.0,0.0,0.0,1.0,0.0);
 
 
@@ -1179,8 +1215,6 @@ void display(void){
 
 
 	glPushMatrix();
-
-//	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	drawSceneTanah(_terrainTanah, 0.7f, 0.2f, 0.1f);
 	glPopMatrix();
 
@@ -1191,14 +1225,12 @@ void display(void){
 //glEnable(GL_COLOR_MATERIAL);
 //glColorMaterial(GL_FRONT,GL_SPECULAR);
 
-
-
 //pohon1
 glPushMatrix();
-glTranslatef(30,-2,50);    
+glTranslatef(80,-13,5);    
+glRotatef(30,0,1,0);
 
 pohon();
-
 //ranting1
 ranting();
 
@@ -1224,8 +1256,8 @@ glPopMatrix();
 
 //pohon2
 glPushMatrix();
-glTranslatef(-50,-2,30);    
-glScalef(0.8, 0.8, 0.8);
+glTranslatef(-180,10,-150);    
+glScalef(1.5, 1.5, 1.5);
 glRotatef(90,0,1,0);
 pohon();
 
@@ -1251,17 +1283,146 @@ glPopMatrix();
 glPopMatrix();
 
 
-
-
-
-
-//burung
+//pohon3
 glPushMatrix();
-glTranslatef(20,20,0);  
-glScalef(0.3, 0.3, 0.3);
+glTranslatef(-100,-13,100);   
+glScalef(0.7, 0.7, 0.7); 
+glRotatef(120,0,1,0);
+
+pohon();
+//ranting1
+ranting();
+
+//ranting2
+glPushMatrix();
+glScalef(1.5, 1.5, 1.5);
+glTranslatef(0,25,25);   
+glRotatef(250,1,0,0);
+ranting();
+glPopMatrix();
+
+//ranting3
+glPushMatrix();
+glScalef(1.8, 1.8, 1.8);
+glTranslatef(0,-6,21.5);   
+glRotatef(-55,1,0,0);
+ranting();
+glPopMatrix();
+
+glPopMatrix();
+
+
+
+
+//pohon4
+glPushMatrix();
+glTranslatef(150,-13,-100);   
+glScalef(0.8, 1, 0.8); 
+glRotatef(60,0,1,0);
+
+pohon();
+//ranting1
+ranting();
+
+//ranting2
+glPushMatrix();
+glScalef(1.5, 1.5, 1.5);
+glTranslatef(0,25,25);   
+glRotatef(250,1,0,0);
+ranting();
+glPopMatrix();
+
+//ranting3
+glPushMatrix();
+glScalef(1.8, 1.8, 1.8);
+glTranslatef(0,-6,21.5);   
+glRotatef(-55,1,0,0);
+ranting();
+glPopMatrix();
+
+glPopMatrix();
+
+
+
+//pohon5
+glPushMatrix();
+glTranslatef(160,-13,100);   
+glScalef(1.2, 1.2, 1.0); 
+glRotatef(100,0,1,0);
+
+pohon();
+//ranting1
+ranting();
+
+//ranting2
+glPushMatrix();
+glScalef(1.5, 1.5, 1.5);
+glTranslatef(0,25,25);   
+glRotatef(250,1,0,0);
+ranting();
+glPopMatrix();
+
+//ranting3
+glPushMatrix();
+glScalef(1.8, 1.8, 1.8);
+glTranslatef(0,-6,21.5);   
+glRotatef(-55,1,0,0);
+ranting();
+glPopMatrix();
+
+glPopMatrix();
+
+
+
+
+//burung1
+
+glPushMatrix();
+glScalef(0.2, 0.2, 0.2);
+glTranslatef(0,200,-80); 
+static float i = 0;
+i+=0.5;
+glRotatef(i,0,1,0);
+glRotatef(i,0,1,1);
+glTranslatef(0,0,i); 
 burung();
 glPopMatrix();
 
+//burung2
+
+glPushMatrix();
+glRotatef(-180,0,1,0);
+glScalef(0.2, 0.2, 0.2);
+glTranslatef(0,200,-80);
+glRotatef(i,0,1,0);
+glRotatef(i,0,1,1);
+glTranslatef(0,0,i); 
+burung();
+glPopMatrix();
+
+//burung3
+
+glPushMatrix();
+glScalef(0.2, 0.2, 0.2);
+glTranslatef(500,200,-300); 
+
+glRotatef(i,0,1,0);
+glRotatef(i,0,1,1);
+glTranslatef(0,0,i); 
+burung();
+glPopMatrix();
+
+//burung4
+
+glPushMatrix();
+glRotatef(-180,0,1,0);
+glScalef(0.2, 0.2, 0.2);
+glTranslatef(500,200,300);
+glRotatef(i,0,1,0);
+glRotatef(i,0,1,1);
+glTranslatef(0,0,i); 
+burung();
+glPopMatrix();
 
 
 
@@ -1272,13 +1433,23 @@ glTranslatef(0,-30,0);
 //manusia
 manusia();
 
+
+//api
+
+api();
+
 //Balon
 
+glBindTexture(GL_TEXTURE_2D, texture[1]);
 balonatas();
 balonbawah();
 
 
 //Kotak dibawah balon
+glBindTexture(GL_TEXTURE_2D, texture[2]);
+tempatapi();
+
+kotakatas();
 kotak1();
 kotak2();
 kotak3();
@@ -1453,7 +1624,8 @@ glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	glTexImage2D(GL_TEXTURE_2D, 0, 3, image1->sizeX, image1->sizeY, 0, GL_RGB,
 			GL_UNSIGNED_BYTE, image1->data);
-*/
+			*/
+
 	
 
 /*------------tekstur balon---------------*/
@@ -1618,7 +1790,7 @@ glutInit(&argc, argv);
 glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_STENCIL | GLUT_DEPTH); //add a stencil buffer to the window
 glutInitWindowSize(800,600);
 glutInitWindowPosition(100,100);
-glutCreateWindow("Kelompok 9");
+glutCreateWindow("Balon Udara Kelompok 9");
 init();
 
 glutDisplayFunc(display);
